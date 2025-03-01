@@ -12,22 +12,17 @@ public class Pedido {
         this.cliente = cliente;
     }
 
-    public void procesarPedido(double total) {
+    public void procesarPedido(double total, boolean esVIP) {
+        double descuento = 0;
+
         if (total > 100) {
-            double descuento = total * 0.10;
-            double precioFinal = total - descuento;
-            System.out.println("Pedido aprobado. Total: " + precioFinal + " (descuento aplicado: " + descuento + ")");
-        } else {
-            System.out.println("Pedido aprobado. Total: " + total);
+            descuento = total * (esVIP ? 0.15 : 0.10); // 15% si es VIP, 10% si no
         }
-    }
-    public void procesarPedidoVIP(double total) {
-        if (total > 100) {
-            double descuento = total * 0.15;
-            double precioFinal = total - descuento;
-            System.out.println("Pedido VIP aprobado. Total: " + precioFinal + " (descuento aplicado: " + descuento + ")");
-        } else {
-            System.out.println("Pedido VIP aprobado. Total: " + total);
-        }
+
+        double precioFinal = total - descuento;
+        String tipoPedido = esVIP ? "Pedido VIP aprobado" : "Pedido aprobado";
+
+        System.out.println(tipoPedido + ". Total: " + precioFinal +
+                (descuento > 0 ? " (descuento aplicado: " + descuento + ")" : ""));
     }
 }
