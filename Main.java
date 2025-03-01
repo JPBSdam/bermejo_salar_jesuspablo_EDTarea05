@@ -1,3 +1,7 @@
+/**
+ * Clase principal donde se ejecuta la aplicación
+ * @author Jesús
+ */
 public class Main {
     public static void main(String[] args) {
         // Crea un pedido para un cliente normal

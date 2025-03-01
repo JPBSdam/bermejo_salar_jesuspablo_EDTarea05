@@ -1,3 +1,7 @@
+/**
+ * Clase que representa los clientes.
+ * @author Jesús
+ */
 public class Cliente {
     private boolean esVip;
     private String nombre;
@@ -27,6 +31,12 @@ public class Cliente {
         this.id = id;
     }
 
+    /**
+     * Constructor de la clase cliente
+     * @param vip
+     * @param nombre
+     * @param id
+     */
     public Cliente(boolean vip, String nombre, int id) {
         this.esVip = vip;
         this.nombre = nombre;

@@ -1,5 +1,14 @@
+/**
+ * Clase que representa pedidos
+ * @author jesus
+ */
 public class Pedido {
     private Cliente cliente;
+
+    /**
+     * Constructor de pedidos
+     * @param cliente
+     */
     public Pedido(Cliente cliente) {
         this.cliente = cliente;
     }
@@ -12,6 +21,11 @@ public class Pedido {
         this.cliente = cliente;
     }
 
+    /**
+     * Método para aplicar descuentos a pedidos
+     * @param total
+     * @param esVIP
+     */
     public void procesarPedido(double total, boolean esVIP) {
         double descuento = 0;
 
